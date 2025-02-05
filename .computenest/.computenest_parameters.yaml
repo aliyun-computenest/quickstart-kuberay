@@ -1,0 +1,16 @@
+ChartValues:
+  image:
+    tag: 2.9.0
+    repository: compute-nest-registry.cn-hangzhou.cr.aliyuncs.com/1563457855438522/rayproject/ray
+    pullPolicy: IfNotPresent
+HelmChartPath: helm-chart/ray-cluster
+RuntimeType: Kubernetes
+ServiceType: private
+ArtifactSourceType: HelmChart
+ServiceBuildRegion: ap-southeast-1
+RepoName: mengjunwei-mjw/quickstart-kuberay
+RegionId: cn-hangzhou
+OutputType: HelmNotes
+Owner: mengjunwei-mjw
+Branch: feature/quickstart
+Platform: github
