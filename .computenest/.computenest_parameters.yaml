@@ -1,0 +1,12 @@
+ChartValues: {}
+HelmChartPath: helm-chart/ray-cluster
+RuntimeType: Kubernetes
+ServiceType: private
+ArtifactSourceType: HelmChart
+ServiceBuildRegion: ap-southeast-1
+RepoName: mengjunwei-mjw/quickstart-kuberay
+RegionId: cn-hangzhou
+OutputType: HelmNotes
+Owner: mengjunwei-mjw
+Branch: feature/quickstart
+Platform: github
