@@ -18,6 +18,9 @@ Service:
         '{{ computenest::helmchart::quickstart-kuberay }}':
           ArtifactId: ${Artifact.Artifact_1.ArtifactId}
           ArtifactVersion: ${Artifact.Artifact_1.ArtifactVersion}
+        '{{ computenest::helmchart::kuberay-operator }}':
+          ArtifactId: ${Artifact.Artifact_2.ArtifactId}
+          ArtifactVersion: ${Artifact.Artifact_2.ArtifactVersion}
     TemplateConfigs:
       - Name: 容器集群版
         Url: 'ros_templates/template.yaml'
@@ -36,8 +39,19 @@ Artifact:
       RepoName: ${HelmChartBuilder.HelmChart_1.RepoName}
       Tag: ${HelmChartBuilder.HelmChart_1.Tag}
       RepoType: Public
+  Artifact_2:
+    ArtifactType: HelmChart
+    ArtifactName: kuberay-operator-helm-chart
+    ArtifactProperty:
+      RepoName: ${HelmChartBuilder.HelmChart_2.RepoName}
+      Tag: ${HelmChartBuilder.HelmChart_2.Tag}
+      RepoType: Public
 HelmChartBuilder:
   HelmChart_1:
     HelmChartPath: 'resources/artifact_resources/helm_chart/ray-cluster-1.1.0.tgz'
     RepoName: ray-cluster
+    Tag: 1.1.0
+  HelmChart_2:
+    HelmChartPath: 'resources/artifact_resources/helm_chart/kuberay-operator-1.1.0.tgz'
+    RepoName: kuberay-operator
     Tag: 1.1.0

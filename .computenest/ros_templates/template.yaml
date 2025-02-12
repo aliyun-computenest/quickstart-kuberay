@@ -482,9 +482,24 @@ Resources:
         Ref: WorkerSystemDiskSize
       LoginPassword:
         Ref: LoginPassword
-  FluxHelmApplicationModule:
+  OperatorHelmApplicationModule:
     DependsOn:
       - AckOrAcsClusterModule
+    Type: MODULE::ACS::ComputeNest::FluxOciHelmDeploy
+    Version: default
+    Properties:
+      ClusterId:
+        Fn::GetAtt:
+          - AckOrAcsClusterModule
+          - ClusterId
+      HelmChartUrl: '{{ computenest::helmchart::kuberay-operator }}'
+      ChartValues: { }
+      Namespace:
+        Ref: 'ALIYUN::StackName'
+      ReleaseName: kuberay-operator
+  FluxHelmApplicationModule:
+    DependsOn:
+      - OperatorHelmApplicationModule
     Type: MODULE::ACS::ComputeNest::FluxOciHelmDeploy
     Version: default
     Properties:
