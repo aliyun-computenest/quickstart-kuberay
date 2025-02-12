@@ -485,7 +485,7 @@ Resources:
   OperatorHelmApplicationModule:
     DependsOn:
       - AckOrAcsClusterModule
-    Type: MODULE::ACS::ComputeNest::FluxOciHelmDeploy
+    Type: MODULE::SHARE::1563457855438522::FluxOciHelmDeploy
     Version: default
     Properties:
       ClusterId:
@@ -500,7 +500,7 @@ Resources:
   FluxHelmApplicationModule:
     DependsOn:
       - OperatorHelmApplicationModule
-    Type: MODULE::ACS::ComputeNest::FluxOciHelmDeploy
+    Type: MODULE::SHARE::1563457855438522::FluxOciHelmDeploy
     Version: default
     Properties:
       ClusterId:
