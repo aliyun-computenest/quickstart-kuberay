@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 image:
-  repository: compute-nest-registry.cn-hangzhou.cr.aliyuncs.com/1563457855438522/kuberay/operator
+  repository: compute-nest-registry.cn-hangzhou.cr.aliyuncs.com/1853370294850618/kuberay/operator
   tag: nightly
   pullPolicy: IfNotPresent
 

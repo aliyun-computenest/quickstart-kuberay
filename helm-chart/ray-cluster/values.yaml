@@ -6,7 +6,7 @@
 # in this Helm chart.
 
 image:
-  repository: compute-nest-registry.cn-hangzhou.cr.aliyuncs.com/1563457855438522/rayproject/ray
+  repository: compute-nest-registry.cn-hangzhou.cr.aliyuncs.com/1853370294850618/rayproject/ray
   tag: 2.9.0
   pullPolicy: IfNotPresent
 
