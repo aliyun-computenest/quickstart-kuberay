@@ -286,5 +286,18 @@ additionalWorkerGroups:
 
 # Configuration for Head's Kubernetes Service
 service:
-  # This is optional, and the default is ClusterIP.
-  type: ClusterIP
+  selector:
+    component: ray-cluster
+  type: LoadBalancer
+  ports:
+    - port: 8265
+      targetPort: 8265
+ingress:
+  enabled: false
+  ingressClassName: ""
+  annotations: {}
+  hosts:
+    - host: raycluster.example.com
+      paths: []
+  pathType: Prefix
+  tls: []
