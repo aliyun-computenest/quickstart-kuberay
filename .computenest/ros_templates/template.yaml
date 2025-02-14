@@ -514,7 +514,7 @@ Resources:
         Ref: 'ALIYUN::StackName'
       ReleaseName: ray-cluster
       OutputCmd: |
-        export SERVICE_IP=$(kubectl get svc --namespace ${Namespace} kuberay-service -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+        export SERVICE_IP=$(kubectl get svc --namespace ${Namespace} ray-cluster-kuberay-head-svc -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
         echo "http://$SERVICE_IP:8265"
 Outputs:
   Instruction:
