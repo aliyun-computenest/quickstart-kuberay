@@ -286,9 +286,5 @@ additionalWorkerGroups:
 
 # Configuration for Head's Kubernetes Service
 service:
-  selector:
-    ray.io/cluster: ray-cluster-kuberay
-  type: LoadBalancer
-  ports:
-    - port: 8265
-      targetPort: 8265
+  # This is optional, and the default is ClusterIP.
+  type: ClusterIP
