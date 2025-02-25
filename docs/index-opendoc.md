@@ -69,7 +69,7 @@ Ray支持在不同操作系统下的[本地部署](https://docs.ray.io/en/latest
 进入创建Ray集群的页面。如没有阿里云账号需要先注册账号哦。
 2. 创建Ray集群时，首先选择新建ACK集群。
 ![img.png](img5.png)
-3. 为保障Ray的流畅运行，Worker节建议选择 8vCpu 16GiB 以上的规格。如果有Gpu需求，需要选择有Gpu的规格。然后填写实例密码。
+3. 为保障Ray的流畅运行，Worker节点建议选择 8vCpu 16GiB 以上的规格。如果有Gpu需求，需要选择有Gpu的规格。然后填写实例密码。
 ![img.png](img6.png)
 4. 选择任意一个可用区，然后点击 下一步：确认订单。
 ![img.png](img7.png)
