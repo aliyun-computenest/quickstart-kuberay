@@ -515,16 +515,7 @@ Resources:
       ReleaseName: ray-cluster
       OutputCmd: |
         export SERVICE_IP=$(kubectl get svc --namespace ${Namespace} ray-cluster-kuberay-head-svc -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-        echo "http://$SERVICE_IP:8265"
-      WaitUntil:
-        - Kind: Service
-          Name: ray-cluster-kuberay-head-svc
-          Namespace:
-            Ref: ALIYUN::StackName
-          JsonPath: $.status.loadBalancer.ingress[0].ip
-          Operator: NotEmpty
-          FirstMatch: true
-          Timeout: 300
+        echo "http://$SERVICE_IP:8265
 Outputs:
   Instruction:
     Description:
