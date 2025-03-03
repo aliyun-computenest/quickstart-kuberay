@@ -145,6 +145,9 @@ Ray支持在不同操作系统下的[本地部署](https://docs.ray.io/en/latest
 
    # Send a request to the Stable Diffusion model.
    python stable_diffusion_req.py
+   ```
+   kubectl apply部署Stable Diffusion约需要15分钟。
+   ![img.png](img26.png)
 3. 运行python stable_diffusion_req.py后，模型会输出一张名为output.png的图片。此时，Stable Diffusion模型服务部署完成。
    ![img.png](img23.png)
 
