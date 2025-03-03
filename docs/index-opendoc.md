@@ -1,4 +1,4 @@
-# 15分钟拉起Ray集群并部署Stable Diffusion模型服务
+# 30分钟拉起Ray集群并部署Stable Diffusion模型服务
 
 ## Ray 平台简介
 
