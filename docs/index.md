@@ -99,8 +99,8 @@ Ray社区版在计算巢部署的费用主要涉及：
 2. 在本地依次执行以下命令。对应[Ray官方教程](https://docs.ray.io/en/master/cluster/kubernetes/examples/stable-diffusion-rayservice.html)从Step 3之后的部分。
    ```bash
    kubectl apply -f https://raw.githubusercontent.com/ray-project/kuberay/master/ray-operator/config/samples/ray-service.stable-diffusion.yaml
-   kubectl get services
-   # Wait until the RayService `Ready` condition is `True`. This means the RayService is ready to serve.
+   kubectl get pods
+   # Wait until the stable-diffusion is `Running`. About 15 minutes are required for this to complete.
    kubectl describe rayservices.ray.io stable-diffusion
    # Forward the port of Serve
    kubectl port-forward svc/stable-diffusion-serve-svc 8000
@@ -112,6 +112,9 @@ Ray社区版在计算巢部署的费用主要涉及：
 
    # Send a request to the Stable Diffusion model.
    python stable_diffusion_req.py
+   ```
+   kubectl apply部署Stable Diffusion约需要15分钟。
+   ![img.png](img26.png)
 3. 运行python stable_diffusion_req.py后，模型会输出一张名为output.png的图片。此时，Stable Diffusion模型服务部署完成。
    ![img.png](img23.png)
    

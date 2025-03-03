@@ -1,4 +1,4 @@
-# 15分钟拉起Ray集群并部署Stable Diffusion模型服务
+# 30分钟拉起Ray集群并部署Stable Diffusion模型服务
 
 ## Ray 平台简介
 
@@ -132,7 +132,7 @@ Ray支持在不同操作系统下的[本地部署](https://docs.ray.io/en/latest
 2. 在本地依次执行以下命令。对应[Ray官方教程](https://docs.ray.io/en/master/cluster/kubernetes/examples/stable-diffusion-rayservice.html)从Step 3之后的部分。
    ```bash
    kubectl apply -f https://raw.githubusercontent.com/ray-project/kuberay/master/ray-operator/config/samples/ray-service.stable-diffusion.yaml
-   kubectl get services
+   kubectl get pods
    # Wait until the RayService `Ready` condition is `True`. This means the RayService is ready to serve.
    kubectl describe rayservices.ray.io stable-diffusion
    # Forward the port of Serve
@@ -145,6 +145,9 @@ Ray支持在不同操作系统下的[本地部署](https://docs.ray.io/en/latest
 
    # Send a request to the Stable Diffusion model.
    python stable_diffusion_req.py
+   ```
+   kubectl apply部署Stable Diffusion约需要15分钟。
+   ![img.png](img26.png)
 3. 运行python stable_diffusion_req.py后，模型会输出一张名为output.png的图片。此时，Stable Diffusion模型服务部署完成。
    ![img.png](img23.png)
 
