@@ -1,4 +1,4 @@
-# 开源平台Ray加速LLM模型训练部署
+# 15分钟拉起Ray集群并部署Stable Diffusion模型服务
 
 ## Ray 平台简介
 
